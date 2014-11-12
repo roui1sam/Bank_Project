@@ -1,9 +1,17 @@
+#include <string>
 #include "Customer.h"
 #include "Account.h"
 
 //Default constructor
 
 //Constructor
+Customer::Customer(int ID, int SSN, string FIRST, string LAST, string ADDRESS) {
+	customer_id = ID;
+	social_security = SSN;
+	first_name = FIRST;
+	last_name = LAST;
+	address = ADDRESS;
+}
 
 //Getters
 int Customer::getId() const { return customer_id; }
@@ -32,3 +40,9 @@ void Customer::setAddress(string ADDRESS) { address = ADDRESS; }
 void Customer::setAccout(Account ACCOUNT) { accounts.push_back(ACCOUNT); }
 
 //Operators
+istream& operator>>(istream& INPUT, Customer& CUSTOMER) {
+	INPUT >> CUSTOMER.customer_id >> CUSTOMER.social_security >>
+		CUSTOMER.first_name >> CUSTOMER.last_name;
+	getline(INPUT, CUSTOMER.address);
+	return INPUT;
+}

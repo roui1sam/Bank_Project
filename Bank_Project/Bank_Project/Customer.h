@@ -12,6 +12,7 @@ class Customer
 public:
 	//Constructors
 	Customer();
+	Customer(int, int, string, string, string);
 
 	//Getters
 	int getId() const;
@@ -28,6 +29,9 @@ public:
 	void setLast(string);
 	void setAddress(string);
 	void setAccout(Account);
+
+	//Operators
+	friend istream& operator>>(istream&, Customer&);
 
 private:
 	int customer_id, social_security;
