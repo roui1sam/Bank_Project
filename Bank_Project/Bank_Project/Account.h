@@ -15,7 +15,7 @@ public:
 
 	//Getters
 	int getNumber() const;
-	double getBalance() const;
+	double getBalance();
 	Customer getOwner() const;
 	Date getDate() const;
 	vector<Transaction> getTransactions() const;

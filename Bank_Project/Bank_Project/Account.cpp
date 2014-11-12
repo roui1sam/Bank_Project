@@ -7,7 +7,7 @@
 //Getters
 int Account::getNumber() const { return account_number; }
 
-double Account::getBalance() const { return balance; }
+double Account::getBalance() { return balance; }
 
 Customer Account::getOwner() const { return owner; }
 
